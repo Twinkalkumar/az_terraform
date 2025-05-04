@@ -34,11 +34,11 @@ variable "client_id" {
   type    = string
 }
 
-#variable "client_secret" {
-#  default   = var.client_secret
-#  type      = string
-#  sensitive = true
-#}
+variable "client_secret" {
+  default   = ""
+  type      = string
+  sensitive = true
+}
 
 variable "vnet_name" {
   default = "vnet_twinkal"
