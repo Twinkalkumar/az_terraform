@@ -15,24 +15,22 @@ variable "tags" {
   default = {
     Environment = "dev"
     Owner       = "team-dev"
+    ManagedBy   = "terraform"
   }
 }
 
-variable "subscription_id" {
-  default = "4f0dddbf-b2ef-4bd5-9204-6fe8b3aa84a4"
-  type    = string
+variable "Environment" {
+  type = map(string)
+  default = {
+    "subscription_id" = "0aef9e33-85e8-4f22-9173-6ce19a226d16"
+    "tenant_id"       = "477b21a6-727e-413f-b5b8-cd0f27c02b6b"
+  }
 }
 
-
-variable "tenant_id" {
-  default = "00d1f4ed-8d43-49b4-8040-b8d4ac96f1ec"
-  type    = string
-}
-
-variable "client_id" {
-  default = "242c76da-6bd5-459d-8a80-5ecca5a5b027"
-  type    = string
-}
+#variable "client_id" {
+#  default = "242c76da-6bd5-459d-8a80-5ecca5a5b027"
+#  type    = string
+#}
 
 #variable "client_secret" {
 #  default   = var.client_secret
@@ -56,4 +54,8 @@ variable "subnet_name" {
 
 variable "address_prefix" {
   default = ["192.168.0.64/26"]
+}
+
+variable "vm_name" {
+  default = "test-twinkal-vm"
 }
