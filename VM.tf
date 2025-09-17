@@ -1,3 +1,10 @@
+locals {
+  tags = {
+    Environment = "Test"
+    ManagedBy   = "terraform"
+  }
+}
+
 # Public IP
 resource "azurerm_public_ip" "public_ip" {
   name                = "${var.vm_name}-public-ip"
@@ -42,4 +49,5 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "22_04-lts"
     version   = "latest"
   }
+  tags = local.tags
 }
